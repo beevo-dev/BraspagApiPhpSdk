@@ -18,6 +18,8 @@ class Address implements BraspagSerializable
 
     private $country;
 
+    private $district;
+
     public function jsonSerialize()
     {
         return array_filter(get_object_vars($this));
@@ -32,6 +34,18 @@ class Address implements BraspagSerializable
         $this->city = isset($data->City)? $data->City: null;
         $this->state = isset($data->State)? $data->State: null;
         $this->country = isset($data->Country)? $data->Country: null;
+        $this->district = isset($data->District)? $data->District: null;
+    }
+
+    public function getDistrict()
+    {
+        return $this->district;
+    }
+
+    public function setDistrict($district)
+    {
+        $this->district = $district;
+        return $this;
     }
 
     public function getStreet()
