@@ -33,6 +33,7 @@ abstract class AbstractSaleRequest
 
         curl_setopt($curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($curl, CURLOPT_ENCODING , "gzip");
 
         switch ($method) {
             case 'GET':
